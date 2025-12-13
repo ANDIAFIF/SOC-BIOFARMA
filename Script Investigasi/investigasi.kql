@@ -1,0 +1,101 @@
+DeviceProcessEvents
+| where DeviceName == "sbcs-laptop10"
+| where FileName =~ "msiexec.exe"
+| where Timestamp between (datetime(2025-10-13T12:00:00Z) .. datetime(2025-10-13T13:00:00Z))
+| extend
+    What = "Proses instalasi/pembaruan aplikasi Google Japanese Input",
+    When = TimeGenerated,
+    Where = DeviceName,
+    Who = AccountName,
+    Why = iif(ProcessCommandLine has "/V", "Kemungkinan proses instalasi otomatis via Windows Installer", "Perlu verifikasi manual"),
+    How = strcat("Dijalankan oleh ", AccountName, " menggunakan command line: ", ProcessCommandLine)
+| project 
+    TimeGenerated,
+    What,
+    When,
+    Where,
+    Who,
+    Why,
+    How,
+    SHA1,
+    FolderPath,
+    ProcessCommandLine
+| extend 
+    FiveWOneH = pack(
+        "What", What,
+        "When", tostring(When),
+        "Where", Where,
+        "Who", Who,
+        "Why", Why,
+        "How", How,
+        "Hash", SHA1,
+        "Path", FolderPath,
+        "CommandLine", ProcessCommandLine
+    )
+| project FiveWOneH
+| take 1
+
+
+
+
+
+
+
+{
+  "timestamp": "2025-10-27T03:29:44.576Z",
+  "source_user": "Zikri Abdul Fahmi",
+  "source_user_domain": "hutamakarya.com",
+  "target_user": "Ivan Hermawan",
+  "target_user_domain": "hutamakarya.com",
+  "source_asset": "unknown",
+  "action": "PASSWORD_RESET",
+  "source_account": "zikri.fahmi",
+  "target_account": "ivan.hermawan",
+  "windows_event_code": "4724",
+  "source_json": {
+    "eventCode": 4724,
+    "computerName": "SERVHK-AD2.hutamakarya.com",
+    "insertionStrings": [
+      "ivan.hermawan",
+      "HUTAMAKARYA",
+      "S-1-5-21-1115315885-1568722659-428712870-1697",
+      "S-1-5-21-1115315885-1568722659-428712870-2276",
+      "zikri.fahmi",
+      "HUTAMAKARYA",
+      "0x9337e8bc"
+    ],
+    "timeGenerated": "20251027032944.576161-000",
+    "recordNumber": 31149304,
+    "osVersion": "Microsoft Windows Server 2019 Standard"
+  },
+  "r7_context": {
+    "source_user": {
+      "type": "user",
+      "rrn": "rrn:uba:ap:7c747e67-a851-4b1e-885f-1742c8a8fe0e:user:3FGEJVP897P6",
+      "name": "Zikri Abdul Fahmi",
+      "domain": "hutamakarya.com"
+    },
+    "target_user": {
+      "type": "user",
+      "rrn": "rrn:uba:ap:7c747e67-a851-4b1e-885f-1742c8a8fe0e:user:XHH28IRSWOBH",
+      "name": "Ivan Hermawan",
+      "domain": "hutamakarya.com"
+    },
+    "source_account": {
+      "type": "account",
+      "rrn": "rrn:uba:ap:7c747e67-a851-4b1e-885f-1742c8a8fe0e:account:37RHMCO7BMBK",
+      "name": "zikri.fahmi"
+    },
+    "target_account": {
+      "type": "account",
+      "rrn": "rrn:uba:ap:7c747e67-a851-4b1e-885f-1742c8a8fe0e:account:EV6GONNUJZO4",
+      "name": "ivan.hermawan"
+    }
+  },
+  "entry_id": "08319666-0b69-4d4b-afa8-9bc915dbb02f",
+  "detection_context": {
+    "target_account": {
+      "account_age_mins": 448315
+    }
+  }
+}
