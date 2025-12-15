@@ -1,0 +1,160 @@
+---
+id: 643d5079-fd90-4962-9aa0-60b8229cf48e
+---
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0078d4', 'primaryTextColor': '#fff', 'primaryBorderColor': '#005a9e', 'lineColor': '#005a9e', 'secondaryColor': '#f3f2f1', 'tertiaryColor': '#e1dfdd'}}}%%
+
+flowchart TB
+    subgraph PREPARATION["1. PREPARATION"]
+        P1[/"Konfigurasi Data Connectors"/]
+        P2[/"Setup Analytics Rules"/]
+        P3[/"Konfigurasi Automation Rules"/]
+        P4[/"Setup Playbooks Logic Apps"/]
+        P5[/"Definisi Workbooks & Dashboards"/]
+        P1 --> P2 --> P3 --> P4 --> P5
+    end
+
+    subgraph DETECTION["2. DETECTION & TRIAGE"]
+        D1{{"Alert Triggered di Sentinel"}}
+        D2["Review Incident Queue"]
+        D3{"Severity Level?"}
+        D4["High/Critical - Immediate Response"]
+        D5["Medium - Prioritas Tinggi"]
+        D6["Low/Informational - Queue Normal"]
+        D7["Assign Incident ke Analyst"]
+
+        D1 --> D2 --> D3
+        D3 -->|High/Critical| D4
+        D3 -->|Medium| D5
+        D3 -->|Low| D6
+        D4 --> D7
+        D5 --> D7
+        D6 --> D7
+    end
+
+    subgraph ANALYSIS["3. INVESTIGATION & ANALYSIS"]
+        A1["Buka Incident Details"]
+        A2["Review Related Entities"]
+        A3["Analisis Timeline Events"]
+        A4["Gunakan Investigation Graph"]
+        A5["Query KQL untuk Deep Dive"]
+        A6{"Evidence Sufficient?"}
+        A7["Kumpulkan Evidence Tambahan"]
+        A8["Dokumentasi Findings"]
+
+        A1 --> A2 --> A3 --> A4 --> A5 --> A6
+        A6 -->|No| A7 --> A5
+        A6 -->|Yes| A8
+    end
+
+    subgraph CLASSIFICATION["4. CLASSIFICATION"]
+        C1{"Incident Valid?"}
+        C2["True Positive - Lanjut Containment"]
+        C3["False Positive - Tune Analytics Rule"]
+        C4["Benign Positive - Dokumentasi & Close"]
+
+        C1 -->|True Positive| C2
+        C1 -->|False Positive| C3
+        C1 -->|Benign| C4
+    end
+
+    subgraph CONTAINMENT["5. CONTAINMENT"]
+        CT1["Isolasi Affected Systems"]
+        CT2["Block Malicious IPs/Domains"]
+        CT3["Disable Compromised Accounts"]
+        CT4["Revoke Active Sessions"]
+        CT5["Apply Network Segmentation"]
+        CT6["Preserve Evidence untuk Forensik"]
+
+        CT1 --> CT2 --> CT3 --> CT4 --> CT5 --> CT6
+    end
+
+    subgraph ERADICATION["6. ERADICATION"]
+        E1["Identifikasi Root Cause"]
+        E2["Remove Malware/Threats"]
+        E3["Patch Vulnerabilities"]
+        E4["Reset Credentials"]
+        E5["Update Security Controls"]
+        E6["Verify Threat Removal"]
+
+        E1 --> E2 --> E3 --> E4 --> E5 --> E6
+    end
+
+    subgraph RECOVERY["7. RECOVERY"]
+        R1["Restore Systems dari Backup"]
+        R2["Verify System Integrity"]
+        R3["Re-enable Services Bertahap"]
+        R4["Monitor untuk Re-infection"]
+        R5["Validate Normal Operations"]
+        R6{"Systems Healthy?"}
+        R7["Return to Production"]
+
+        R1 --> R2 --> R3 --> R4 --> R5 --> R6
+        R6 -->|No| R1
+        R6 -->|Yes| R7
+    end
+
+    subgraph POST_INCIDENT["8. POST-INCIDENT"]
+        PI1["Update Incident Status: Closed"]
+        PI2["Generate Incident Report"]
+        PI3["Conduct Lessons Learned"]
+        PI4["Update Playbooks & Procedures"]
+        PI5["Improve Detection Rules"]
+        PI6["Share Threat Intelligence"]
+
+        PI1 --> PI2 --> PI3 --> PI4 --> PI5 --> PI6
+    end
+
+    subgraph SENTINEL_TOOLS["MICROSOFT SENTINEL TOOLS"]
+        ST1[("Incidents Queue")]
+        ST2[("Investigation Graph")]
+        ST3[("Hunting Queries")]
+        ST4[("Workbooks")]
+        ST5[("Automation Playbooks")]
+        ST6[("Threat Intelligence")]
+        ST7[("Entity Behavior UEBA")]
+        ST8[("Watchlists")]
+    end
+
+    %% Flow Connections
+    PREPARATION --> DETECTION
+    DETECTION --> ANALYSIS
+    ANALYSIS --> CLASSIFICATION
+    C2 --> CONTAINMENT
+    C3 --> POST_INCIDENT
+    C4 --> POST_INCIDENT
+    CONTAINMENT --> ERADICATION
+    ERADICATION --> RECOVERY
+    RECOVERY --> POST_INCIDENT
+
+    %% Tool Connections
+    ST1 -.-> D2
+    ST2 -.-> A4
+    ST3 -.-> A5
+    ST4 -.-> A3
+    ST5 -.-> CT1
+    ST6 -.-> CT2
+    ST7 -.-> A2
+    ST8 -.-> A5
+
+    %% Styling
+    classDef prepPhase fill:#107c10,stroke:#0b5c0b,color:#fff
+    classDef detectPhase fill:#0078d4,stroke:#005a9e,color:#fff
+    classDef analysisPhase fill:#5c2d91,stroke:#441f6b,color:#fff
+    classDef classifyPhase fill:#ffb900,stroke:#cc9400,color:#000
+    classDef containPhase fill:#d83b01,stroke:#a62d01,color:#fff
+    classDef eradPhase fill:#e81123,stroke:#b80d1c,color:#fff
+    classDef recoveryPhase fill:#00bcf2,stroke:#0099c9,color:#000
+    classDef postPhase fill:#107c10,stroke:#0b5c0b,color:#fff
+    classDef toolsPhase fill:#323130,stroke:#201f1e,color:#fff
+    classDef decision fill:#fff,stroke:#0078d4,color:#000
+
+    class PREPARATION prepPhase
+    class DETECTION detectPhase
+    class ANALYSIS analysisPhase
+    class CLASSIFICATION classifyPhase
+    class CONTAINMENT containPhase
+    class ERADICATION eradPhase
+    class RECOVERY recoveryPhase
+    class POST_INCIDENT postPhase
+    class SENTINEL_TOOLS toolsPhase
+    class D3,A6,C1,R6 decision

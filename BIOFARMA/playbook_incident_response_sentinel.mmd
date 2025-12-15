@@ -1,0 +1,262 @@
+%%{init: {'theme': 'neutral', 'themeVariables': { 'primaryColor': '#ffffff', 'primaryTextColor': '#333', 'primaryBorderColor': '#999', 'lineColor': '#666', 'secondaryColor': '#fafafa', 'tertiaryColor': '#f5f5f5', 'background': '#ffffff'}}}%%
+
+flowchart TB
+    %% ========================================
+    %% FASE PERSIAPAN
+    %% ========================================
+    subgraph PREPARE["PERSIAPAN"]
+        direction TB
+
+        P_START([MULAI]) --> P1["Menentukan<br/>Tim Operasional Inti &<br/>Mendefinisikan Peran"]
+
+        P1 --> P1A["SOC Analyst L1"]
+        P1 --> P1B["SOC Analyst L2"]
+        P1 --> P1C["Incident Responder"]
+        P1 --> P1D["Threat Hunter"]
+        P1 --> P1E["IR Manager"]
+
+        P1 --> P2["Menentukan<br/>Tim Ekstended &<br/>Mendefinisikan Peran"]
+
+        P2 --> P2A["Pimpinan<br/>Eksekutif"]
+        P2 --> P2B["Pimpinan<br/>Layanan Profesional"]
+        P2 --> P2C["Dukungan Respons<br/>Hukum/Humas"]
+
+        P1 --> P_SME["Subject Matter Experts"]
+        P_SME --> P_SME1["Manajer<br/>Kerentanan"]
+        P_SME --> P_SME2["Manajer<br/>Ancaman"]
+        P_SME --> P_SME3["Manajer<br/>Risiko"]
+
+        P2 --> P3["Menentukan<br/>Jalur Eskalasi"]
+
+        P3 --> P3A[("Dokumen<br/>Eskalasi")]
+        P3 --> P3B["Menentukan<br/>Jalur Eskalasi"]
+        P3B --> P3C["Menentukan<br/>Jalur Eskalasi"]
+        P3C --> P3D[("Dokumen<br/>Eskalasi")]
+
+        P3 --> P_NEXT([Langkah<br/>Selanjutnya])
+    end
+
+    %% ========================================
+    %% FASE DETEKSI
+    %% ========================================
+    subgraph DETECT["DETEKSI"]
+        direction TB
+
+        D_PREV([Langkah<br/>Sebelumnya]) --> D_THREAT["Mendefinisikan<br/>Indikator Ancaman"]
+
+        %% Indikator Standar
+        D_STD1["Alert terpicu dari<br/>Microsoft Sentinel<br/>Analytics Rules"]
+        D_STD2["Aktivitas login tidak biasa<br/>dari Azure AD<br/>Identity Protection"]
+        D_STD3["Eksekusi proses mencurigakan<br/>terdeteksi oleh<br/>Defender for Endpoint"]
+        D_STD4["Lalu lintas jaringan anomali<br/>terdeteksi oleh<br/>Firewall/NSG logs"]
+        D_STD5["Percobaan autentikasi gagal<br/>melebihi batas<br/>threshold"]
+
+        D_STD1 --> D_STANDARD["STANDAR"]
+        D_STD2 --> D_STANDARD
+        D_STD3 --> D_STANDARD
+        D_STD4 --> D_STANDARD
+        D_STD5 --> D_STANDARD
+
+        D_STANDARD --> D_THREAT
+
+        %% Indikator Khusus
+        D_THREAT --> D_CUSTOM["KHUSUS"]
+        D_CUSTOM --> D_CUST1["Indikator Khusus<br/>IOC Internal"]
+
+        %% Faktor Risiko
+        D_THREAT --> D_RISK["Mendefinisikan<br/>Faktor Risiko"]
+
+        %% Faktor Risiko Standar
+        D_RISK_STD1["PII berisiko<br/>terekspos"]
+        D_RISK_STD2["IP berisiko<br/>terekspos"]
+        D_RISK_STD3["Tindakan ini dapat<br/>dieksploitasi untuk<br/>aktivitas kriminal"]
+        D_RISK_STD4["Ini dapat berdampak<br/>negatif terhadap<br/>reputasi publik"]
+        D_RISK_STD5["Pelanggan terdampak<br/>oleh insiden ini"]
+        D_RISK_STD6["Produk/barang/layanan<br/>terdampak oleh<br/>insiden ini"]
+        D_RISK_STD7["Keselamatan publik TERDAMPAK"]
+        D_RISK_STD8["Keselamatan pribadi<br/>TIDAK TERDAMPAK"]
+
+        D_RISK_STD1 --> D_RISK_STANDARD["STANDAR"]
+        D_RISK_STD2 --> D_RISK_STANDARD
+        D_RISK_STD3 --> D_RISK_STANDARD
+        D_RISK_STD4 --> D_RISK_STANDARD
+        D_RISK_STD5 --> D_RISK_STANDARD
+        D_RISK_STD6 --> D_RISK_STANDARD
+        D_RISK_STD7 --> D_RISK_STANDARD
+        D_RISK_STD8 --> D_RISK_STANDARD
+
+        D_RISK_STANDARD --> D_RISK
+
+        %% Faktor Risiko Khusus
+        D_RISK --> D_RISK_CUSTOM["KHUSUS"]
+        D_RISK_CUSTOM --> D_RISK_CUST1["Faktor Khusus"]
+
+        %% Tindakan Tambahan
+        D_RISK --> D_CAPTURE["Permintaan<br/>Packet Capture"]
+        D_CAPTURE --> D_SCAN["Melakukan<br/>Pemindaian"]
+
+        D_SCAN --> D_NEXT([Langkah<br/>Selanjutnya])
+    end
+
+    %% ========================================
+    %% FASE ANALISIS
+    %% ========================================
+    subgraph ANALYZE["ANALISIS"]
+        direction TB
+
+        A_PREV([Langkah<br/>Sebelumnya]) --> A_RISK["Mendefinisikan<br/>Faktor Risiko"]
+
+        %% Penilaian Risiko Standar
+        A_STD1["Pelanggan terdampak<br/>oleh insiden ini"]
+        A_STD2["PII berisiko terekspos"]
+        A_STD3["IP berisiko terekspos"]
+        A_STD4["Keselamatan publik terdampak"]
+        A_STD5["Tindakan ini dapat dieksploitasi<br/>untuk aktivitas kriminal"]
+        A_STD6["Ini dapat berdampak negatif<br/>terhadap reputasi publik"]
+        A_STD7["Produk/barang/layanan<br/>terdampak oleh insiden ini"]
+        A_STD8["Keselamatan pribadi tidak terdampak"]
+
+        A_STD1 --> A_STANDARD["STANDAR"]
+        A_STD2 --> A_STANDARD
+        A_STD3 --> A_STANDARD
+        A_STD4 --> A_STANDARD
+        A_STD5 --> A_STANDARD
+        A_STD6 --> A_STANDARD
+        A_STD7 --> A_STANDARD
+        A_STD8 --> A_STANDARD
+
+        A_STANDARD --> A_RISK
+
+        %% Penilaian Risiko Khusus
+        A_RISK --> A_CUSTOM["KHUSUS"]
+        A_CUSTOM --> A_CUST1["Bisnis"]
+        A_CUSTOM --> A_CUST2["Kepatuhan"]
+        A_CUSTOM --> A_CUST3["Operasional"]
+        A_CUSTOM --> A_CUST4["Industri"]
+        A_CUST1 --> A_CUST_FACTOR["Faktor Khusus"]
+        A_CUST2 --> A_CUST_FACTOR
+        A_CUST3 --> A_CUST_FACTOR
+        A_CUST4 --> A_CUST_FACTOR
+
+        A_RISK --> A_NEXT([Langkah<br/>Selanjutnya])
+    end
+
+    %% ========================================
+    %% FASE PENAHANAN
+    %% ========================================
+    subgraph CONTAIN["PENAHANAN"]
+        direction TB
+
+        C_PREV([Langkah<br/>Sebelumnya]) --> C_SEVERITY{"Menentukan<br/>Tingkat Keparahan"}
+
+        C_SEVERITY -->|Kritis| C_CRITICAL["Isolasi Segera<br/>via Defender for Endpoint"]
+        C_SEVERITY -->|Tinggi| C_HIGH["Isolasi Jaringan<br/>Blokir IP/Domain di NSG"]
+        C_SEVERITY -->|Sedang| C_MEDIUM["Nonaktifkan Akun Pengguna<br/>via Azure AD"]
+        C_SEVERITY -->|Rendah| C_LOW["Monitor &<br/>Dokumentasi"]
+
+        C_CRITICAL --> C_ACTION1["Jalankan Sentinel Playbook<br/>Isolate-AzureVM"]
+        C_HIGH --> C_ACTION2["Jalankan Sentinel Playbook<br/>Block-IP-NSG"]
+        C_MEDIUM --> C_ACTION3["Jalankan Sentinel Playbook<br/>Disable-AAD-User"]
+        C_LOW --> C_ACTION4["Buat Watchlist<br/>untuk Monitoring"]
+
+        C_ACTION1 --> C_ESCALATE{"Eskalasi ke<br/>Tim IR?"}
+        C_ACTION2 --> C_ESCALATE
+        C_ACTION3 --> C_ESCALATE
+        C_ACTION4 --> C_ESCALATE
+
+        C_ESCALATE -->|Ya| C_IR["Aktifkan Tim IR<br/>& Tim Ekstended"]
+        C_ESCALATE -->|Tidak| C_NEXT([Langkah<br/>Selanjutnya])
+        C_IR --> C_NEXT
+    end
+
+    %% ========================================
+    %% FASE PEMBERANTASAN
+    %% ========================================
+    subgraph ERADICATE["PEMBERANTASAN"]
+        direction TB
+
+        E_PREV([Langkah<br/>Sebelumnya]) --> E_ROOT["Identifikasi Akar Masalah<br/>via Sentinel Investigation"]
+
+        E_ROOT --> E_ACTION1["Hapus Malware<br/>via Defender for Endpoint"]
+        E_ROOT --> E_ACTION2["Cabut Sesi<br/>via Azure AD"]
+        E_ROOT --> E_ACTION3["Reset Kredensial<br/>via Azure AD"]
+        E_ROOT --> E_ACTION4["Patch Kerentanan<br/>via Azure Update Management"]
+
+        E_ACTION1 --> E_VERIFY{"Ancaman<br/>Terhapus?"}
+        E_ACTION2 --> E_VERIFY
+        E_ACTION3 --> E_VERIFY
+        E_ACTION4 --> E_VERIFY
+
+        E_VERIFY -->|Tidak| E_ROOT
+        E_VERIFY -->|Ya| E_NEXT([Langkah<br/>Selanjutnya])
+    end
+
+    %% ========================================
+    %% FASE PEMULIHAN
+    %% ========================================
+    subgraph RECOVER["PEMULIHAN"]
+        direction TB
+
+        R_PREV([Langkah<br/>Sebelumnya]) --> R_RESTORE["Pulihkan Sistem<br/>dari Azure Backup"]
+
+        R_RESTORE --> R_VERIFY["Verifikasi Integritas Sistem<br/>via Defender Scan"]
+        R_VERIFY --> R_ENABLE["Aktifkan Kembali Layanan<br/>& Akses Pengguna"]
+        R_ENABLE --> R_MONITOR["Monitor via Sentinel<br/>untuk Infeksi Ulang"]
+
+        R_MONITOR --> R_CHECK{"Sistem<br/>Sehat?"}
+        R_CHECK -->|Tidak| R_RESTORE
+        R_CHECK -->|Ya| R_NEXT([Langkah<br/>Selanjutnya])
+    end
+
+    %% ========================================
+    %% FASE PASCA-INSIDEN
+    %% ========================================
+    subgraph POST_INCIDENT["PASCA-INSIDEN"]
+        direction TB
+
+        PI_PREV([Langkah<br/>Sebelumnya]) --> PI_CLOSE["Perbarui Status Insiden<br/>ke Ditutup di Sentinel"]
+
+        PI_CLOSE --> PI_REPORT["Buat Laporan Insiden<br/>via Sentinel Workbook"]
+        PI_REPORT --> PI_LESSON["Lakukan Pertemuan<br/>Lessons Learned"]
+        PI_LESSON --> PI_UPDATE["Perbarui Playbook<br/>& Aturan Deteksi"]
+        PI_UPDATE --> PI_THREAT["Bagikan Threat Intelligence<br/>ke Platform TI"]
+
+        PI_THREAT --> PI_END([SELESAI])
+    end
+
+    %% ========================================
+    %% KONEKSI ANTAR FASE
+    %% ========================================
+    P_NEXT --> D_PREV
+    D_NEXT --> A_PREV
+    A_NEXT --> C_PREV
+    C_NEXT --> E_PREV
+    E_NEXT --> R_PREV
+    R_NEXT --> PI_PREV
+
+    %% ========================================
+    %% STYLING - Warna Transparan/Netral
+    %% ========================================
+    classDef preparePhase fill:transparent,stroke:#666,color:#333
+    classDef detectPhase fill:transparent,stroke:#666,color:#333
+    classDef analyzePhase fill:transparent,stroke:#666,color:#333
+    classDef containPhase fill:transparent,stroke:#666,color:#333
+    classDef eradicatePhase fill:transparent,stroke:#666,color:#333
+    classDef recoverPhase fill:transparent,stroke:#666,color:#333
+    classDef postPhase fill:transparent,stroke:#666,color:#333
+    classDef standardBox fill:#f9f9f9,stroke:#aaa,color:#333
+    classDef customBox fill:#f0f0f0,stroke:#999,color:#333
+    classDef decisionBox fill:#fff,stroke:#888,color:#333
+    classDef terminator fill:#f5f5f5,stroke:#999,color:#333
+
+    class PREPARE preparePhase
+    class DETECT detectPhase
+    class ANALYZE analyzePhase
+    class CONTAIN containPhase
+    class ERADICATE eradicatePhase
+    class RECOVER recoverPhase
+    class POST_INCIDENT postPhase
+    class D_STANDARD,D_RISK_STANDARD,A_STANDARD standardBox
+    class D_CUSTOM,D_RISK_CUSTOM,A_CUSTOM customBox
+    class C_SEVERITY,C_ESCALATE,E_VERIFY,R_CHECK decisionBox
+    class P_START,P_NEXT,D_PREV,D_NEXT,A_PREV,A_NEXT,C_PREV,C_NEXT,E_PREV,E_NEXT,R_PREV,R_NEXT,PI_PREV,PI_END terminator
