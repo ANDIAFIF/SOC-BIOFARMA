@@ -42,6 +42,10 @@ telegram.py
 telegram_old.py.bak
 soc_bot.py
 ip_checker.py
+soc
+soc.pub
+socc
+socc.pub
 *.bak
 
 # ==================================================
