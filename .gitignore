@@ -1,0 +1,53 @@
+# ==================================================
+# SOC-BIOFARMA .gitignore
+# ==================================================
+
+# Environment & Secrets (JANGAN PERNAH PUSH!)
+.env
+.env.*
+*.env
+credentials.json
+secrets.json
+staff.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.so
+.venv/
+venv/
+env/
+ENV/
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Script files (hanya blacklist yang di-push)
+telegram.py
+telegram_old.py.bak
+soc_bot.py
+ip_checker.py
+*.bak
+
+# ==================================================
+# YANG DI-PUSH KE GITHUB:
+# - List-IP-Blacklist.txt (blacklist untuk firewall/NDR)
+# - README.md (dokumentasi)
+# - SETUP.md (panduan setup)
+# - .gitignore (file ini)
+# ==================================================
