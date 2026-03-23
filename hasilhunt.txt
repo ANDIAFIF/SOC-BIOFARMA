@@ -1,0 +1,310 @@
+======================================
+[*] Pengecekan IP: 104.248.39.97
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:3682:104.248.39.97
+blacklist_db.json:14722:  "104.248.39.97": {
+
+======================================
+[*] Pengecekan IP: 122.231.191.3
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:3923:122.231.191.3
+blacklist_db.json:15686:  "122.231.191.3": {
+
+======================================
+[*] Pengecekan IP: 134.122.92.111
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    134.122.92.111 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 134.209.241.26
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    134.209.241.26 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 138.197.215.115
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    138.197.215.115 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 138.68.66.47
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    138.68.66.47 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 139.59.157.41
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    139.59.157.41 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 159.223.19.111
+ -> [LOGS]
+logs/soc_bot.log:5045:2026-03-14 02:15:38 | INFO | MSG | User=1761197230 | Chat=1761197230 | Type=private | Text=159.223.19.111
+logs/soc_bot.log:5046:2026-03-14 02:15:40 | INFO | BLACKLISTED | IP=159.223.19.111 | REASON=auto
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:5058:159.223.19.111
+blacklist_db.json:20226:  "159.223.19.111": {
+
+======================================
+[*] Pengecekan IP: 16.58.56.214
+ -> [LOGS]
+logs/soc_bot_20260318_215006.log:20:2026-03-19 07:26:10 | INFO | MSG | User=6872081104 | Chat=6872081104 | Type=private | Text=16.58.56.214
+logs/soc_bot_20260318_215006.log:23:2026-03-19 07:26:23 | INFO | MSG | User=6872081104 | Chat=6872081104 | Type=private | Text=16.58.56.214
+logs/soc_bot.log:5083:2026-03-14 05:11:43 | INFO | MSG | User=1761197230 | Chat=1761197230 | Type=private | Text=16.58.56.214
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:3617:16.58.56.214
+blacklist_db.json:14462:  "16.58.56.214": {
+
+======================================
+[*] Pengecekan IP: 160.119.76.55
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    160.119.76.55 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 161.35.192.246
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    161.35.192.246 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 161.35.194.236
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    161.35.194.236 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 164.92.169.188
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    164.92.169.188 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 167.71.54.153
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    167.71.54.153 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 18.116.101.220
+ -> [LOGS]
+logs/soc_bot_20260318_215006.log:24:2026-03-19 07:26:38 | INFO | MSG | User=6872081104 | Chat=6872081104 | Type=private | Text=18.116.101.220
+logs/soc_bot.log:4819:2026-03-13 05:49:06 | INFO | MSG | User=1376381232 | Chat=1376381232 | Type=private | Text=18.116.101.220
+logs/soc_bot.log:4830:2026-03-13 06:12:22 | INFO | MSG | User=8233240406 | Chat=8233240406 | Type=private | Text=18.116.101.220
+logs/soc_bot.log:4972:2026-03-14 00:53:29 | INFO | MSG | User=1761197230 | Chat=1761197230 | Type=private | Text=18.116.101.220
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:3192:18.116.101.220
+blacklist_db.json:12762:  "18.116.101.220": {
+
+======================================
+[*] Pengecekan IP: 18.218.118.203
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:3710:18.218.118.203
+blacklist_db.json:14834:  "18.218.118.203": {
+
+======================================
+[*] Pengecekan IP: 185.226.197.33
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    185.226.197.33 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 198.74.56.135
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:3687:198.74.56.135
+blacklist_db.json:14742:  "198.74.56.135": {
+
+======================================
+[*] Pengecekan IP: 202.98.62.18
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    202.98.62.18 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 206.189.163.249
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    206.189.163.249 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 209.38.221.25
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    209.38.221.25 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 220.197.78.116
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    220.197.78.116 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 3.129.187.38
+ -> [LOGS]
+logs/soc_bot_20260318_215006.log:25:2026-03-19 07:26:46 | INFO | MSG | User=6872081104 | Chat=6872081104 | Type=private | Text=3.129.187.38
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:3579:3.129.187.38
+blacklist_db.json:14310:  "3.129.187.38": {
+
+======================================
+[*] Pengecekan IP: 3.131.220.121
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:3608:3.131.220.121
+blacklist_db.json:14426:  "3.131.220.121": {
+
+======================================
+[*] Pengecekan IP: 3.132.26.232
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    3.132.26.232 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 3.134.216.108
+ -> [LOGS]
+logs/soc_bot_20260317_220602.log:29:2026-03-18 02:17:34 | INFO | MSG | User=1761197230 | Chat=1761197230 | Type=private | Text=3.134.216.108
+logs/soc_bot.log:4892:2026-03-13 11:41:50 | INFO | MSG | User=5751082113 | Chat=5751082113 | Type=private | Text=3.134.216.108
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:3692:3.134.216.108
+blacklist_db.json:14762:  "3.134.216.108": {
+
+======================================
+[*] Pengecekan IP: 3.143.162.210
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    3.143.162.210 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 3.151.241.153
+ -> [LOGS]
+logs/soc_bot.log:1730:2026-03-08 13:22:19 | INFO | MSG | User=6968505401 | Chat=6968505401 | Type=private | Text=3.151.241.153
+logs/soc_bot.log:1732:2026-03-08 13:22:22 | INFO | BLACKLISTED | IP=3.151.241.153 | REASON=auto
+logs/soc_bot.log:4822:2026-03-13 05:49:34 | INFO | MSG | User=1376381232 | Chat=1376381232 | Type=private | Text=3.151.241.153
+logs/soc_bot.log:4825:2026-03-13 05:55:58 | INFO | MSG | User=1376381232 | Chat=1376381232 | Type=private | Text=3.151.241.153
+logs/soc_bot.log:4829:2026-03-13 06:12:16 | INFO | MSG | User=8233240406 | Chat=8233240406 | Type=private | Text=3.151.241.153
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:4784:3.151.241.153
+blacklist_db.json:19130:  "3.151.241.153": {
+
+======================================
+[*] Pengecekan IP: 35.231.60.79
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    35.231.60.79 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 45.33.87.154
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    45.33.87.154 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 45.79.152.14
+ -> [LOGS]
+logs/soc_bot.log:1602:2026-03-08 03:18:35 | INFO | MSG | User=1376381232 | Chat=1376381232 | Type=private | Text=45.79.152.14
+logs/soc_bot.log:1603:2026-03-08 03:18:35 | INFO | FORCE_BLACKLISTED | IP=45.79.152.14 | REASON=Manual/Anomaly - Telegram
+logs/soc_bot.log:1610:2026-03-08 03:22:56 | INFO | MSG | User=1376381232 | Chat=1376381232 | Type=private | Text=45.79.152.14
+logs/soc_bot.log:2224:2026-03-09 16:56:18 | INFO | MSG | User=1761197230 | Chat=1761197230 | Type=private | Text=45.79.152.14
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:4770:45.79.152.14
+blacklist_db.json:19074:  "45.79.152.14": {
+
+======================================
+[*] Pengecekan IP: 45.79.8.221
+ -> [LOGS]
+logs/soc_bot.log:3467:2026-03-12 10:55:06 | INFO | MSG | User=762559594 | Chat=762559594 | Type=private | Text=45.79.8.221
+logs/soc_bot.log:3468:2026-03-12 10:55:09 | INFO | BLACKLISTED | IP=45.79.8.221 | REASON=auto
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:4994:45.79.8.221
+blacklist_db.json:19970:  "45.79.8.221": {
+
+======================================
+[*] Pengecekan IP: 46.101.124.59
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    46.101.124.59 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 46.101.133.235
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:4002:46.101.133.235
+blacklist_db.json:16002:  "46.101.133.235": {
+
+======================================
+[*] Pengecekan IP: 69.164.217.74
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    69.164.217.74 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 72.14.178.148
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    72.14.178.148 <- tidak ada didalam blacklist
+
+======================================
+[*] Pengecekan IP: 81.29.142.100
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:1473:81.29.142.100
+blacklist_db.json:4358:  "81.29.142.100": {
+
+======================================
+[*] Pengecekan IP: 81.29.142.6
+ -> [LOGS]
+logs/soc_bot_20260318_215006.log:8:2026-03-19 02:29:16 | INFO | MSG | User=8233240406 | Chat=8233240406 | Type=private | Text=81.29.142.6
+logs/soc_bot_20260318_215006.log:9:2026-03-19 02:29:24 | INFO | MSG | User=8233240406 | Chat=8233240406 | Type=private | Text=81.29.142.6
+logs/soc_bot_20260318_215006.log:26:2026-03-19 07:40:37 | INFO | MSG | User=6872081104 | Chat=6872081104 | Type=private | Text=81.29.142.6
+logs/soc_bot_20260318_215006.log:27:2026-03-19 07:40:42 | INFO | MSG | User=6872081104 | Chat=6872081104 | Type=private | Text=81.29.142.6
+logs/soc_bot_20260318_215006.log:28:2026-03-19 07:40:49 | INFO | MSG | User=6872081104 | Chat=6872081104 | Type=private | Text=81.29.142.6
+logs/soc_bot.log:5330:2026-03-15 20:48:42 | INFO | MSG | User=1376381232 | Chat=1376381232 | Type=private | Text=81.29.142.6
+logs/soc_bot.log:5331:2026-03-15 20:48:42 | INFO | FORCE_BLACKLISTED | IP=81.29.142.6 | REASON=Manual/Anomaly - Telegram
+ -> [BLACKLIST]
+List-IP-Blacklist.txt:5105:81.29.142.6
+blacklist_db.json:20414:  "81.29.142.6": {
+
+======================================
+[*] Pengecekan IP: 93.123.109.42
+ -> [LOGS]
+    (Tidak ditemukan di logs)
+ -> [BLACKLIST]
+    93.123.109.42 <- tidak ada didalam blacklist
+
