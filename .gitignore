@@ -9,7 +9,8 @@
 credentials.json
 secrets.json
 staff.json
-
+soc-bot.txt.old
+soc-bot.py.oold
 # Python
 __pycache__/
 *.py[cod]
